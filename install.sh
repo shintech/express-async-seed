@@ -7,7 +7,6 @@ fi
 
 echo "Creating file directories..." && \
 mkdir build && \
-mkdir build/static && \
 
 printf "\nInstalling packages...\n" && \
 yarn install && \
