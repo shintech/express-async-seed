@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import {getStatusCodeStyle} from 'shintech-utils'
 
 export default function (app, options) {
-  const { pkg } = options
+  const { pkg, port } = options
 
   const server = http.Server(app)
 
@@ -14,7 +14,7 @@ export default function (app, options) {
   })
 
   server.on('listening', () => {
-    logger.info(`${chalk.bgBlack.cyan(pkg.name)} version ${chalk.bgBlack.yellow(pkg.version)} is listening on port ${chalk.bgBlack.green(8000)}...`)
+    logger.info(`${chalk.bgBlack.cyan(pkg.name)} version ${chalk.bgBlack.yellow(pkg.version)} is listening on port ${chalk.bgBlack.green(port)}...`)
   })
 
   return server
